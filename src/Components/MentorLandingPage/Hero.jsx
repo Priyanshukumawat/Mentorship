@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../Common/Button'
 
 function Hero() {
     return (
@@ -13,9 +14,9 @@ function Hero() {
                     </p>
                 </div>
 
-                <button className="bg-[#806543] text-black mt-5 lg:py-2 lg:px-4 py-1 px-2 w-fit rounded-lg hover:bg-brown-700 flex justify-start items-center">
-                    Become a member <span className="text-lg">→</span>
-                </button>
+                <Button className="text-black"> Become a member <span className="text-lg">→</span></Button>
+
+
             </div>
         </>
     )

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Sidebar from '../Components/MentorDashboard/Sidebar';
+import Menubar from '../Components/MentorDashboard/Menubar';
 import Navbar from '../Components/MentorDashboard/Navbar';
-import AccountForm from '../Components/MentorDashboard/Forms/AccountForm';
-import KycForm from '../Components/MentorDashboard/Forms/KycForm';
+import AccountForm from '../Components/MentorDashboard/FormsAndMenuItems/AccountForm';
+import KycForm from '../Components/MentorDashboard/FormsAndMenuItems/KycForm';
 
 function Dashboard() {
     const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -22,7 +22,7 @@ function Dashboard() {
             <div className="flex justify-center items-start bg-gray-200">
                 {/* Sidebar Section */}
                 <div className='z-10'>
-                    <Sidebar
+                    <Menubar
                         isOpen={isSidebarOpen}
                         toggleSidebar={toggleSidebar}
                         onComponentChange={handleComponentChange}

@@ -1,15 +1,15 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './Pages/HomePage'
-import Dashboard from './Pages/Dashboard';
+import MentorLandingPage from './Pages/MentorLandingPage'
+import MentorDasboard from './Pages/MentorDashboard';
 
 function App() {
   return (
     <Router>
       <>
         <Routes>
-          <Route index element={<HomePage />} />
-          <Route path='/dashboard' element={<Dashboard />} />
+          <Route index element={<MentorLandingPage />} />
+          <Route path='/dashboard' element={<MentorDasboard />} />
         </Routes>
       </>
     </Router>
