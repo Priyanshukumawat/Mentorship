@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FaCog, FaUserCheck, FaMoneyCheckAlt, FaCalendarAlt, FaBook, FaRegListAlt, FaRegClock, FaRegEnvelope, FaHeart, FaRegSun, FaGraduationCap, FaTicketAlt, FaChartBar, FaSignOutAlt, FaHome, FaElementor } from 'react-icons/fa';
 // import AccountForm from './Forms/AccountForm';
 
-function Sidebar({ isOpen, toggleSidebar, onComponentChange }) {
+function Menubar({ isOpen, toggleSidebar, onComponentChange }) {
     const [isSubSidebarOpen, setRightSidebarOpen] = useState(false);
     // const [activeForm, setActiveForm] = useState(null);
     const subSidebarRef = useRef(null);
@@ -27,7 +27,7 @@ function Sidebar({ isOpen, toggleSidebar, onComponentChange }) {
         { name: "Logout", icon: <FaSignOutAlt /> }
     ];
 
-    // Close the sidebar if clicking outside
+    // Close the Menubar if clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (subSidebarRef.current && !subSidebarRef.current.contains(event.target)) {
@@ -59,7 +59,7 @@ function Sidebar({ isOpen, toggleSidebar, onComponentChange }) {
         >
 
 
-            {/* Left Sidebar */}
+            {/* Left Menubar */}
             <div className="flex flex-col h-full">
                 <ul className="space-y-2">
                     <li className="flex items-center p-4 hover:bg-gray-700 cursor-pointer transition duration-300 border-b border-gray-600">
@@ -103,4 +103,4 @@ function Sidebar({ isOpen, toggleSidebar, onComponentChange }) {
     );
 }
 
-export default Sidebar;
+export default Menubar;
