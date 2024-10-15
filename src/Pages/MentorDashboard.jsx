@@ -3,44 +3,45 @@ import Menubar from '../Components/MentorDashboard/Menubar';
 import Navbar from '../Components/MentorDashboard/Navbar';
 import AccountForm from '../Components/MentorDashboard/FormsAndMenuItems/AccountForm';
 import KycForm from '../Components/MentorDashboard/FormsAndMenuItems/KycForm';
+import DashboardViewProfile from '../Components/MentorDashboard/FormsAndMenuItems/DashboardViewProfile';
 
 function Dashboard() {
     const [isSidebarOpen, setSidebarOpen] = useState(false);
-    const [activeComponent, setActiveComponent] = useState(null); // To track the active component
+    const [activeComponent, setActiveComponent] = useState(null); // Track the active component
 
-    const toggleSidebar = () => {
-        setSidebarOpen(!isSidebarOpen);
-    };
+    const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
 
     const handleComponentChange = (component) => {
         setActiveComponent(component);
-        setSidebarOpen(false); // Close sidebar on selection if needed
+        setSidebarOpen(false); // Optional: Close sidebar after selection
     };
 
     return (
-        <>
-            <div className="flex justify-center items-start bg-gray-200">
-                {/* Sidebar Section */}
-                <div className='z-10'>
-                    <Menubar
-                        isOpen={isSidebarOpen}
-                        toggleSidebar={toggleSidebar}
-                        onComponentChange={handleComponentChange}
-                    />
-                </div>
+        <div className="flex bg-gray-200 h-full">
+            {/* Sidebar Section */}
+            <Menubar
+                isOpen={isSidebarOpen}
+                toggleSidebar={toggleSidebar}
+                onComponentChange={handleComponentChange}
+            />
 
-                {/* Main Content Section */}
-                <div className="w-full">
-                    <Navbar toggleSidebar={toggleSidebar} />
+            {/* Main Content Section */}
+            <div className="w-full">
+                <Navbar toggleSidebar={toggleSidebar} />
 
-                    {/* Render the active component based on selection */}
-                    <div className="p-4 flex justify-center items-center">
-                        {activeComponent === 'account' && <AccountForm />}
-                        {activeComponent === 'kyc' && <KycForm />}
-                    </div>
+                <div className="p-4 flex justify-center items-start w-full">
+                    {/* Render the active component */}
+                    {activeComponent === 'dashboardViewProfile' && <DashboardViewProfile />}
+                    {activeComponent === 'account' && <AccountForm />}
+                    {activeComponent === 'kyc' && <KycForm />}
+                    {!activeComponent && (
+                        <div className="text-center">
+                            <h2 className="text-lg font-semibold">Select an option from the sidebar</h2>
+                        </div>
+                    )}
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 
