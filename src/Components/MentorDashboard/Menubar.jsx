@@ -69,8 +69,8 @@ function Menubar({ isOpen, toggleSidebar, onComponentChange }) {
     return (
         <div
             className={`flex flex-col h-full bg-gray-800 text-white p-4
-                fixed overflow-x-hidden lg:relative z-10 ${isOpen ? 'block' : 'hidden'} 
-                md:w-64 transition-width duration-300`}
+        fixed overflow-x-hidden md:relative z-10 
+        ${isOpen ? 'block' : 'hidden'} lg:block md:w-64 transition-width duration-300`}
         >
             {/* Mentorship Section */}
             {/* Left Menubar */}
